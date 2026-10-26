@@ -1,0 +1,8 @@
+Add project screenshots to this folder using these filenames:
+smarttrip.jpg
+mental-health.jpg
+medguard.jpg
+pawgle.jpg
+cheerishcraft.jpg
+
+Use landscape screenshots. Until a photo is added, the portfolio displays its built-in project preview artwork.
