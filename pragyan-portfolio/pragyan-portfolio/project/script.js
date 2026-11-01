@@ -7,19 +7,19 @@ const navLinks = document.getElementById("navLinks");
 
 function applyTheme(theme) {
   root.setAttribute("data-theme", theme);
-  const dark = theme === "dark";
-  themeIcon.textContent = dark ? "☼" : "☾";
-  themeLabel.textContent = dark ? "Light" : "Dark";
-  themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+  const isLight = theme === "light";
+  if (themeIcon) themeIcon.textContent = isLight ? "☾" : "☼";
+  if (themeLabel) themeLabel.textContent = isLight ? "Dark" : "Light";
+  if (themeToggle) themeToggle.setAttribute("aria-label", isLight ? "Switch to dark theme" : "Switch to light theme");
   try { localStorage.setItem("pragyan-portfolio-theme", theme); } catch (e) {}
 }
 
-let savedTheme = "dark";
-try { savedTheme = localStorage.getItem("pragyan-portfolio-theme") || "dark"; } catch (e) {}
+let savedTheme = "light";
+try { savedTheme = localStorage.getItem("pragyan-portfolio-theme") || "light"; } catch (e) {}
 applyTheme(savedTheme);
 
 themeToggle.addEventListener("click", () => {
-  applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  applyTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light");
 });
 
 menuToggle.addEventListener("click", () => {
@@ -341,9 +341,9 @@ document.querySelectorAll("[data-project-gallery]").forEach(gallery => {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
       if (isDark) {
-        ctx.fillStyle = this.isCyan ? "rgba(114, 224, 207, 0.75)" : "rgba(185, 166, 255, 0.8)";
+        ctx.fillStyle = this.isCyan ? "rgba(56, 189, 248, 0.7)" : "rgba(111, 155, 255, 0.75)";
       } else {
-        ctx.fillStyle = this.isCyan ? "rgba(22, 141, 126, 0.65)" : "rgba(115, 85, 217, 0.7)";
+        ctx.fillStyle = this.isCyan ? "rgba(15, 118, 110, 0.45)" : "rgba(37, 87, 214, 0.45)";
       }
       ctx.fill();
     }
@@ -366,11 +366,11 @@ document.querySelectorAll("[data-project-gallery]").forEach(gallery => {
         const dist = Math.hypot(dx, dy);
 
         if (dist < maxDistance) {
-          const alpha = (1 - dist / maxDistance) * (isDark ? 0.22 : 0.14);
+          const alpha = (1 - dist / maxDistance) * (isDark ? 0.22 : 0.12);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
-          ctx.strokeStyle = isDark ? `rgba(185, 166, 255, ${alpha})` : `rgba(115, 85, 217, ${alpha})`;
+          ctx.strokeStyle = isDark ? `rgba(111, 155, 255, ${alpha})` : `rgba(37, 87, 214, ${alpha})`;
           ctx.lineWidth = 0.8;
           ctx.stroke();
         }
@@ -381,11 +381,11 @@ document.querySelectorAll("[data-project-gallery]").forEach(gallery => {
         const dy = particles[i].y - mouse.y;
         const dist = Math.hypot(dx, dy);
         if (dist < mouseDistance) {
-          const alpha = (1 - dist / mouseDistance) * (isDark ? 0.35 : 0.2);
+          const alpha = (1 - dist / mouseDistance) * (isDark ? 0.32 : 0.18);
           ctx.beginPath();
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = isDark ? `rgba(114, 224, 207, ${alpha})` : `rgba(22, 141, 126, ${alpha})`;
+          ctx.strokeStyle = isDark ? `rgba(56, 189, 248, ${alpha})` : `rgba(15, 118, 110, ${alpha})`;
           ctx.lineWidth = 1;
           ctx.stroke();
         }
