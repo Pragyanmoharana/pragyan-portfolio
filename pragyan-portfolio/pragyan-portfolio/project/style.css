@@ -1,34 +1,49 @@
 /* =============================================================
    Pragyan Bharati Moharana — Portfolio Stylesheet
-   Single consolidated file. No duplicate/conflicting blocks.
+   Natural, Handcrafted & Luminous Light Design
    ============================================================= */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0b0d12;
-  --surface: #12151d;
-  --surface2: #191e28;
-  --text: #f4f6fa;
-  --muted: #a0a7b5;
-  --line: rgba(255, 255, 255, .10);
-  --accent: #b9a6ff;
-  --accent2: #72e0cf;
-  --header: rgba(11, 13, 18, .85);
-  --shadow: 0 22px 65px rgba(0, 0, 0, .24);
+  /* Primary Natural Light Palette */
+  --bg: #faf9f6;             /* Warm alabaster / natural linen — soft on eyes, organic feel */
+  --surface: #ffffff;        /* Crisp pure white cards */
+  --surface2: #f2f4f8;       /* Clean neutral surface for tags, code & pills */
+  --surface-alt: #f8fafc;    /* Crisp secondary section surface */
+  --text: #161a24;           /* Deep graphite charcoal — readable, strong contrast */
+  --muted: #525d72;          /* Rich neutral secondary text — accessible WCAG AA */
+  --line: #e3e6ed;           /* Soft natural borders */
+  --line-strong: #cbd5e1;    /* Stronger border when needed */
+  --accent: #2557d6;         /* Royal Cobalt Blue — clean, trustworthy, technical */
+  --accent-light: #e8effd;   /* Very soft blue tint for badges */
+  --accent2: #0f766e;        /* Deep Forest Sage Teal — organic, healthcare, growth */
+  --accent2-light: #e6f4f2;  /* Very soft teal tint for pills */
+  --accent-warm: #d97706;   /* Warm Honey Amber — natural achievement accent */
+  --header: rgba(250, 249, 246, 0.92);
+  --shadow-sm: 0 1px 3px rgba(16, 24, 40, 0.05);
+  --shadow: 0 8px 24px -4px rgba(16, 24, 40, 0.05), 0 2px 6px -1px rgba(16, 24, 40, 0.03);
+  --shadow-lg: 0 16px 36px -6px rgba(16, 24, 40, 0.08), 0 6px 14px -2px rgba(16, 24, 40, 0.04);
 }
 
-html[data-theme="light"] {
-  --bg: #f6f7fb;
-  --surface: #fff;
-  --surface2: #eff1f8;
-  --text: #171a25;
-  --muted: #626a7b;
-  --line: rgba(23, 26, 37, .12);
-  --accent: #7355d9;
-  --accent2: #168d7e;
-  --header: rgba(246, 247, 251, .88);
-  --shadow: 0 22px 65px rgba(34, 38, 70, .10);
+html[data-theme="dark"] {
+  --bg: #11141c;
+  --surface: #181d26;
+  --surface2: #212735;
+  --surface-alt: #151922;
+  --text: #f3f5fa;
+  --muted: #9aa3b6;
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.18);
+  --accent: #6f9bff;
+  --accent-light: rgba(111, 155, 255, 0.14);
+  --accent2: #38bdf8;
+  --accent2-light: rgba(56, 189, 248, 0.14);
+  --accent-warm: #fbbf24;
+  --header: rgba(17, 20, 28, 0.92);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
 
 html { scroll-behavior: smooth; scroll-padding-top: 90px; }
@@ -51,7 +66,7 @@ main {
 }
 
 /* =============================================================
-   Enhanced Background System (AI / Neural / Engineering Theme)
+   Natural Ambient Background (Organic, Daylight Luminous Atmosphere)
    ============================================================= */
 .bg-system {
   position: fixed;
@@ -61,27 +76,23 @@ main {
   overflow: hidden;
 }
 
-/* 1. Engineering Coordinate Grid */
+/* 1. Fine Notebook Dot Grid */
 .bg-grid-pattern {
   position: absolute;
   inset: 0;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.032) 1px, transparent 1px);
-  background-size: 56px 56px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 92%);
-  mask-image: radial-gradient(ellipse 90% 80% at 50% 20%, black 35%, transparent 92%);
-  opacity: 0.95;
+  background-image: radial-gradient(rgba(37, 87, 214, 0.08) 1.2px, transparent 1.2px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, black 40%, transparent 95%);
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 15%, black 40%, transparent 95%);
+  opacity: 0.75;
 }
 
-html[data-theme="light"] .bg-grid-pattern {
-  background-image: 
-    linear-gradient(to right, rgba(115, 85, 217, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(115, 85, 217, 0.045) 1px, transparent 1px);
-  opacity: 0.8;
+html[data-theme="dark"] .bg-grid-pattern {
+  background-image: radial-gradient(rgba(111, 155, 255, 0.12) 1.2px, transparent 1.2px);
+  opacity: 0.6;
 }
 
-/* 2. Ambient Aurora Glow Mesh */
+/* 2. Soft Ambient Daylight Mesh */
 .ambient-mesh {
   position: absolute;
   inset: 0;
@@ -90,61 +101,69 @@ html[data-theme="light"] .bg-grid-pattern {
 .glow-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(105px);
-  opacity: 0.55;
+  filter: blur(110px);
+  opacity: 0.7;
   will-change: transform;
 }
 
-/* Orb 1: Hero Deep Violet Neural Aura */
+/* Orb 1: Warm Amber Daylight Aura */
 .orb-1 {
-  top: -120px;
-  right: -60px;
-  width: 620px;
-  height: 620px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 32%, transparent) 0%, color-mix(in srgb, #6347d1 20%, transparent) 46%, transparent 70%);
-  animation: orbDrift1 22s ease-in-out infinite alternate;
+  top: -100px;
+  right: -50px;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.10) 0%, rgba(251, 191, 36, 0.04) 45%, transparent 70%);
+  animation: orbDrift1 24s ease-in-out infinite alternate;
 }
 
-/* Orb 2: Systems Cyber Teal Aura */
+/* Orb 2: Crisp Sky Blue Aura */
 .orb-2 {
-  top: 160px;
-  left: -120px;
-  width: 540px;
-  height: 540px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 26%, transparent) 0%, color-mix(in srgb, #0ca892 18%, transparent) 46%, transparent 70%);
+  top: 140px;
+  left: -100px;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(37, 87, 214, 0.09) 0%, rgba(59, 130, 246, 0.03) 45%, transparent 70%);
   animation: orbDrift2 26s ease-in-out infinite alternate;
 }
 
-/* Orb 3: Mid-page Projects Aura */
+/* Orb 3: Mid-page Forest Sage Aura */
 .orb-3 {
   top: 48%;
-  right: -8%;
-  width: 620px;
-  height: 620px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0%, color-mix(in srgb, var(--accent2) 16%, transparent) 50%, transparent 72%);
+  right: -6%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.08) 0%, transparent 70%);
   animation: orbDrift3 28s ease-in-out infinite alternate;
 }
 
-/* Orb 4: Education & SIH Showcase Focal Aura */
+/* Orb 4: Bottom Warm Amber Aura */
 .orb-4 {
-  bottom: 10%;
-  left: 2%;
-  width: 580px;
-  height: 580px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--accent2) 24%, transparent) 0%, color-mix(in srgb, #4a3891 18%, transparent) 50%, transparent 72%);
+  bottom: 8%;
+  left: 3%;
+  width: 540px;
+  height: 540px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.07) 0%, transparent 70%);
   animation: orbDrift1 24s ease-in-out infinite alternate-reverse;
 }
 
-html[data-theme="light"] .glow-orb {
+html[data-theme="dark"] .glow-orb {
   filter: blur(125px);
-  opacity: 0.38;
+  opacity: 0.45;
+}
+
+html[data-theme="dark"] .orb-1 {
+  background: radial-gradient(circle, rgba(111, 155, 255, 0.22) 0%, transparent 70%);
+}
+
+html[data-theme="dark"] .orb-2 {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%);
 }
 
 /* 3. Interactive Cursor Spotlight */
 .cursor-spotlight {
   position: absolute;
   inset: 0;
-  background: radial-gradient(620px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), color-mix(in srgb, var(--accent) 12%, transparent) 0%, transparent 60%);
+  background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 30%), color-mix(in srgb, var(--accent) 7%, transparent) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -154,19 +173,19 @@ body:hover .cursor-spotlight {
   opacity: 1;
 }
 
-/* 4. Neural Network / Synapse Canvas */
+/* 4. Subtle Particle Canvas */
 .neural-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.55;
+  opacity: 0.42;
   transition: opacity 0.4s ease;
   pointer-events: none;
 }
 
-html[data-theme="light"] .neural-canvas {
-  opacity: 0.38;
+html[data-theme="dark"] .neural-canvas {
+  opacity: 0.48;
 }
 
 /* Orb Drift Keyframes */
@@ -218,7 +237,7 @@ html[data-theme="light"] .neural-canvas {
   height: 36px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  color: #10121a;
+  color: #ffffff;
   font-size: 21px;
 }
 
@@ -226,7 +245,7 @@ html[data-theme="light"] .neural-canvas {
 
 .nav-links { display: flex; align-items: center; gap: 30px; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--muted); transition: color .2s; }
-.nav-links a:hover { color: var(--text); }
+.nav-links a:hover { color: var(--accent); }
 
 .header-actions { display: flex; align-items: center; gap: 10px; }
 
@@ -236,6 +255,11 @@ html[data-theme="light"] .neural-canvas {
   color: var(--text);
   border-radius: 9px;
   cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
 }
 
 .theme-toggle {
@@ -277,12 +301,12 @@ html[data-theme="light"] .neural-canvas {
   border-radius: 50%;
   background: var(--accent2);
   margin-right: 9px;
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent2) 15%, transparent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent2) 18%, transparent);
 }
 
 .gradient-text {
   color: transparent;
-  background: linear-gradient(105deg, var(--accent), var(--accent2));
+  background: linear-gradient(120deg, var(--accent), var(--accent2));
   background-clip: text;
   -webkit-background-clip: text;
 }
@@ -318,11 +342,16 @@ html[data-theme="light"] .neural-canvas {
 .hero-tags span, .skill-pills span, .project-tech span {
   font-size: 12px;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text);
   border: 1px solid var(--line);
-  background: var(--surface);
+  background: var(--surface2);
   border-radius: 7px;
   padding: 7px 12px;
+  transition: border-color .2s, background .2s;
+}
+
+.hero-tags span:hover, .skill-pills span:hover, .project-tech span:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
 }
 
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -335,7 +364,7 @@ html[data-theme="light"] .neural-canvas {
   border-radius: 9px;
   font-size: 14px;
   font-weight: 600;
-  transition: transform .2s;
+  transition: transform .2s, box-shadow .2s;
   will-change: transform;
 }
 
@@ -343,148 +372,115 @@ html[data-theme="light"] .neural-canvas {
 .button:active { transform: translateY(0) scale(.98); }
 
 .button-primary {
-  background: linear-gradient(110deg, var(--accent), var(--accent2));
-  color: #11131b;
+  background: linear-gradient(110deg, var(--accent), #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 87, 214, 0.25);
+}
+
+.button-primary:hover {
+  box-shadow: 0 8px 22px rgba(37, 87, 214, 0.35);
+  color: #ffffff;
 }
 
 .button-secondary {
   border: 1px solid var(--line);
   background: var(--surface);
   color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+
+.button-secondary:hover {
+  background: var(--surface2);
+  border-color: var(--line-strong);
 }
 
 .hero-stats { display: flex; align-items: center; gap: 32px; margin-top: 42px; }
 .hero-stats div { display: flex; flex-direction: column; }
-.hero-stats strong { font: 700 24px "Space Grotesk", sans-serif; }
+.hero-stats strong { font: 700 24px "Space Grotesk", sans-serif; color: var(--text); }
 .hero-stats strong span { font-size: 14px; color: var(--muted); font-weight: 400; }
 .hero-stats small { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
-/* ---------- Hero visual / Portrait animation ---------- */
+/* ---------- Hero Visual / Portrait Card (Natural & Handcrafted) ---------- */
 .hero-visual {
-  min-height: 490px;
-  display: grid;
-  place-items: center;
+  min-height: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  isolation: isolate;
 }
 
-.portrait-frame {
-  width: min(335px, 80%);
-  aspect-ratio: 4 / 5;
-  border-radius: 44% 44% 18px 18px;
-  overflow: hidden;
+.portrait-card {
   position: relative;
-  z-index: 2;
-  background: var(--surface2);
+  width: min(340px, 86%);
+  background: var(--surface);
   border: 1px solid var(--line);
-  box-shadow: 0 20px 70px color-mix(in srgb, var(--accent) 17%, transparent), var(--shadow);
-  animation: portrait-float 6s ease-in-out infinite;
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
 }
 
-.portrait-frame img {
+.portrait-card:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
+  box-shadow: 0 20px 45px -8px rgba(37, 87, 214, 0.12), var(--shadow);
+}
+
+.portrait-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 4.9;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface2);
+}
+
+.portrait-image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  display: block;
+  transition: transform .4s ease;
 }
 
-.portrait-frame::before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid color-mix(in srgb, var(--accent2) 40%, transparent);
-  pointer-events: none;
+.portrait-card:hover .portrait-image-wrapper img {
+  transform: scale(1.02);
 }
 
-.portrait-ring {
-  position: absolute;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.ring-one {
-  width: min(430px, 105%);
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-  animation: orbit-breathe 7s ease-in-out infinite;
-}
-
-.ring-two {
-  width: min(475px, 115%);
-  border: 1px dashed color-mix(in srgb, var(--accent2) 34%, transparent);
-  animation: orbit-spin 34s linear infinite;
-}
-
-.portrait-spark {
-  position: absolute;
-  z-index: 5;
-  color: var(--accent2);
-  font-size: 25px;
-  text-shadow: 0 0 22px color-mix(in srgb, var(--accent2) 65%, transparent);
-  animation: spark-float 3.8s ease-in-out infinite;
-}
-
-.spark-a { top: 14%; left: 17%; }
-.spark-b { top: 25%; right: 14%; font-size: 34px; animation-delay: -1.2s; }
-.spark-c { bottom: 22%; right: 10%; font-size: 20px; animation-delay: -2s; }
-
-.portrait-orbit-dot {
-  position: absolute;
-  z-index: 4;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent2);
-  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent2) 12%, transparent),
-              0 0 22px var(--accent2);
-  animation: dot-pulse 2.5s ease-in-out infinite;
-}
-
-.orbit-dot-a { top: 19%; right: 22%; }
-.orbit-dot-b { bottom: 24%; left: 15%; width: 7px; height: 7px; animation-delay: -1.2s; }
-
-.floating-card {
-  position: absolute;
-  z-index: 4;
+.portrait-card-footer {
+  padding: 14px 6px 6px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.portrait-status-pill {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 11px 13px;
-  background: color-mix(in srgb, var(--surface) 94%, transparent);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(12px);
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent2);
+  background: color-mix(in srgb, var(--accent2) 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent2) 22%, var(--surface));
+  border-radius: 20px;
+  padding: 6px 12px;
+  width: fit-content;
 }
 
-.card-top { top: 75px; right: -5px; animation: card-drift 5s ease-in-out infinite; }
-.card-bottom { bottom: 62px; left: -9px; animation: card-drift 5.5s ease-in-out infinite reverse; }
-
-.card-icon {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border-radius: 9px;
-  background: color-mix(in srgb, var(--accent) 15%, var(--surface));
-  color: var(--accent);
-  font-size: 16px;
+.portrait-status-pill .status-dot {
+  background: var(--accent2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent2) 25%, transparent);
+  margin-right: 2px;
 }
-
-.floating-card b, .floating-card small { display: block; }
-.floating-card b { font-size: 13px; font-weight: 600; }
-.floating-card small { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
 .portrait-caption {
-  position: absolute;
-  right: 0;
-  bottom: 5px;
   font-size: 11px;
   letter-spacing: 1.5px;
+  font-weight: 700;
   color: var(--muted);
-  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .scroll-cue {
@@ -515,10 +511,10 @@ html[data-theme="light"] .neural-canvas {
 
 .focus-panel {
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  backdrop-filter: blur(14px);
-  border-radius: 13px;
-  padding: 8px 20px;
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 8px 22px;
+  box-shadow: var(--shadow);
 }
 
 .focus-item {
@@ -531,28 +527,32 @@ html[data-theme="light"] .neural-canvas {
 .focus-item:last-child { border-bottom: 0; }
 .focus-index { font: 700 14px "Space Grotesk", sans-serif; color: var(--accent); padding-top: 2px; }
 .focus-item b, .focus-item small { display: block; }
-.focus-item b { font-size: 15px; font-weight: 600; }
+.focus-item b { font-size: 15px; font-weight: 600; color: var(--text); }
 .focus-item small { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
 /* ---------- Skills ---------- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 13px;
+  gap: 14px;
 }
 
 .skill-card {
-  padding: 21px;
+  padding: 22px;
   border: 1px solid var(--line);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--surface) 92%, transparent);
-  backdrop-filter: blur(14px);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
   min-width: 0;
-  transition: border-color .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
   will-change: transform;
 }
 
-.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow);
+}
 
 .skill-card-top {
   display: flex;
@@ -567,13 +567,13 @@ html[data-theme="light"] .neural-canvas {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: color-mix(in srgb, var(--accent) 12%, var(--surface2));
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
   color: var(--accent);
   font-size: 18px;
 }
 
 .skill-count { font-size: 12px; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
-.skill-card h3 { font: 600 19px "Space Grotesk", sans-serif; margin: 0; }
+.skill-card h3 { font: 600 19px "Space Grotesk", sans-serif; margin: 0; color: var(--text); }
 .skill-card > p, .wide-skill-copy p { font-size: 13px; color: var(--muted); margin: 6px 0 18px; line-height: 1.6; }
 
 .skill-pills { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -588,7 +588,7 @@ html[data-theme="light"] .neural-canvas {
 }
 
 .skill-card-wide .skill-card-top { grid-row: 1 / 3; align-self: start; margin: 0; }
-.wide-skill-copy h3 { font: 600 20px "Space Grotesk", sans-serif; margin: 0; }
+.wide-skill-copy h3 { font: 600 20px "Space Grotesk", sans-serif; margin: 0; color: var(--text); }
 .wide-skill-copy p { margin: 5px 0 14px; font-size: 14px; }
 .skill-card-wide .skill-pills { grid-column: 2; }
 
@@ -614,7 +614,7 @@ html[data-theme="light"] .neural-canvas {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
-  gap: 20px;
+  gap: 22px;
 }
 
 .project-card {
@@ -622,17 +622,18 @@ html[data-theme="light"] .neural-canvas {
   flex-direction: column;
   min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 13px;
+  border-radius: 14px;
   overflow: hidden;
-  background: color-mix(in srgb, var(--surface) 93%, transparent);
-  backdrop-filter: blur(14px);
-  transition: transform .22s, border-color .22s;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform .22s, border-color .22s, box-shadow .22s;
   will-change: transform;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-lg);
 }
 
 .project-gallery {
@@ -671,9 +672,9 @@ html[data-theme="light"] .neural-canvas {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(13, 15, 26, .82);
+  background: rgba(22, 26, 36, 0.78);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, .2);
+  border: 1px solid rgba(255, 255, 255, .25);
   backdrop-filter: blur(8px);
   border-radius: 30px;
   padding: 6px 12px;
@@ -686,7 +687,7 @@ html[data-theme="light"] .neural-canvas {
   position: absolute;
   right: 10px;
   bottom: 10px;
-  background: rgba(13, 15, 26, .82);
+  background: rgba(22, 26, 36, 0.78);
   color: #fff;
   border-radius: 30px;
   padding: 5px 10px;
@@ -712,7 +713,7 @@ html[data-theme="light"] .neural-canvas {
   overflow: hidden;
   background: var(--surface);
   cursor: pointer;
-  opacity: .66;
+  opacity: .72;
   transition: opacity .2s, border-color .2s, transform .2s;
 }
 
@@ -731,7 +732,7 @@ html[data-theme="light"] .neural-canvas {
   box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
-.project-content { flex: 1 1 auto; min-width: 0; padding: 20px; }
+.project-content { flex: 1 1 auto; min-width: 0; padding: 22px; }
 
 .project-title-row {
   display: flex;
@@ -740,7 +741,7 @@ html[data-theme="light"] .neural-canvas {
   gap: 10px;
 }
 
-.project-title-row h3 { font: 600 22px "Space Grotesk", sans-serif; margin: 0; }
+.project-title-row h3 { font: 600 22px "Space Grotesk", sans-serif; margin: 0; color: var(--text); }
 .project-number { font-size: 13px; color: var(--muted); font-weight: 600; }
 
 .project-type {
@@ -791,15 +792,15 @@ html[data-theme="light"] .neural-canvas {
   color: var(--text);
   background: var(--surface2);
   border: 1px solid var(--line);
-  transition: transform .2s, border-color .2s, background .2s;
+  transition: transform .2s, border-color .2s, background .2s, color .2s;
   text-decoration: none;
 }
 
 .button-github:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, var(--surface2));
-  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface));
+  color: var(--accent);
 }
 
 .button-github svg {
@@ -816,10 +817,14 @@ html[data-theme="light"] .neural-canvas {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .5px;
-  background: color-mix(in srgb, var(--accent2) 15%, transparent);
-  color: var(--accent2);
-  border: 1px solid color-mix(in srgb, var(--accent2) 30%, transparent);
+  background: color-mix(in srgb, var(--accent-warm) 12%, var(--surface));
+  color: #92400e;
+  border: 1px solid color-mix(in srgb, var(--accent-warm) 28%, var(--surface));
   margin-bottom: 12px;
+}
+
+html[data-theme="dark"] .metric-pill {
+  color: var(--accent-warm);
 }
 
 /* ---------- Experience & Workshops ---------- */
@@ -831,11 +836,11 @@ html[data-theme="light"] .neural-canvas {
 
 .experience-card, .event-card {
   border: 1px solid var(--line);
-  border-radius: 13px;
+  border-radius: 14px;
   padding: 24px;
-  background: color-mix(in srgb, var(--surface) 93%, transparent);
-  backdrop-filter: blur(14px);
-  transition: transform .22s, border-color .22s;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform .22s, border-color .22s, box-shadow .22s;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -844,6 +849,7 @@ html[data-theme="light"] .neural-canvas {
 .experience-card:hover, .event-card:hover {
   transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-lg);
 }
 
 .experience-header, .event-header {
@@ -923,8 +929,8 @@ html[data-theme="light"] .neural-canvas {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent2);
-  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent2) 15%, transparent);
+  background: var(--accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .education-rail span:nth-child(1) { top: 2%; }
@@ -979,17 +985,17 @@ html[data-theme="light"] .neural-canvas {
 .education-card {
   min-width: 0;
   border: 1px solid var(--line);
-  border-radius: 13px;
+  border-radius: 14px;
   overflow: hidden;
-  background: color-mix(in srgb, var(--surface) 93%, transparent);
-  backdrop-filter: blur(14px);
+  background: var(--surface);
+  box-shadow: var(--shadow);
   transition: transform .28s, border-color .28s, box-shadow .28s;
 }
 
 .education-step:hover .education-card {
-  transform: translateY(-5px);
-  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
-  box-shadow: var(--shadow);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-lg);
 }
 
 .education-card-banner {
@@ -1001,13 +1007,13 @@ html[data-theme="light"] .neural-canvas {
   gap: 8px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(125deg, #3b4263, #665e93 58%, #3c8b86);
+  background: linear-gradient(125deg, #1e3a8a, #2557d6 58%, #0f766e);
 }
 
 .education-card-banner::before, .education-card-banner::after {
   content: "";
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, .20);
   border-radius: 50%;
   width: 170px;
   height: 170px;
@@ -1030,8 +1036,8 @@ html[data-theme="light"] .neural-canvas {
   width: 42px;
   height: 42px;
   border-radius: 11px;
-  background: rgba(255, 255, 255, .16);
-  border: 1px solid rgba(255, 255, 255, .25);
+  background: rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, .3);
   color: #fff;
   font: 700 20px "Space Grotesk", sans-serif;
   z-index: 1;
@@ -1040,8 +1046,8 @@ html[data-theme="light"] .neural-canvas {
 .education-badge {
   z-index: 1;
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, .3);
-  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, .15);
   border-radius: 6px;
   padding: 6px 10px;
   font-size: 11px;
@@ -1057,7 +1063,7 @@ html[data-theme="light"] .neural-canvas {
 }
 
 .education-card .education-label { font-size: 11px; letter-spacing: 1.5px; margin: 0 0 8px; font-weight: 700; color: var(--accent); }
-.education-card h3 { font: 600 22px / 1.3 "Space Grotesk", sans-serif; margin: 0; }
+.education-card h3 { font: 600 22px / 1.3 "Space Grotesk", sans-serif; margin: 0; color: var(--text); }
 .education-school { font-size: 15px; font-weight: 600; margin: 12px 0 0; }
 .education-location { font-size: 13px; color: var(--muted); margin: 4px 0 20px; }
 .education-location span { color: var(--accent); margin-right: 5px; }
@@ -1071,7 +1077,7 @@ html[data-theme="light"] .neural-canvas {
 }
 
 .education-score small { display: block; color: var(--muted); font-size: 10px; letter-spacing: 1px; margin-bottom: 4px; font-weight: 600; }
-.education-score strong { font: 700 23px "Space Grotesk", sans-serif; }
+.education-score strong { font: 700 23px "Space Grotesk", sans-serif; color: var(--text); }
 .education-score strong span { font: 400 13px "DM Sans", sans-serif; color: var(--muted); }
 
 .score-ring {
@@ -1117,7 +1123,7 @@ html[data-theme="light"] .neural-canvas {
 .cgpa-track i { --result: 92%; }
 .result-track i { width: var(--result); }
 
-.school-card { background: linear-gradient(155deg, var(--surface), color-mix(in srgb, var(--accent) 4%, var(--surface))); }
+.school-card { background: var(--surface); }
 
 .school-card-top {
   min-height: 70px;
@@ -1131,7 +1137,7 @@ html[data-theme="light"] .neural-canvas {
 }
 
 .school-monogram {
-  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
   border-color: var(--line);
   color: var(--accent);
   font-size: 17px;
@@ -1148,27 +1154,27 @@ html[data-theme="light"] .neural-canvas {
 .school-score strong { font: 700 24px "Space Grotesk", sans-serif; color: var(--text); }
 .school-score strong small { font: 400 13px "DM Sans", sans-serif; color: var(--muted); }
 
-/* ---------- SIH Flagship Showcase & Auto Carousel ---------- */
+/* ---------- Smart India Hackathon Flagship Showcase ---------- */
 .sih-showcase {
   margin-top: 28px;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: color-mix(in srgb, var(--surface) 94%, transparent);
-  backdrop-filter: blur(16px);
+  background: var(--surface);
   overflow: hidden;
   display: grid;
   grid-template-columns: 1.18fr 0.82fr;
   box-shadow: var(--shadow);
-  transition: border-color .25s ease, transform .25s ease;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
 }
 
 .sih-showcase:hover {
-  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-lg);
 }
 
 .sih-carousel-wrapper {
   position: relative;
-  background: #090b10;
+  background: #0e121a;
   min-height: 400px;
   overflow: hidden;
   display: flex;
@@ -1209,14 +1215,14 @@ html[data-theme="light"] .neural-canvas {
 
 .sih-slide[data-index="3"] img {
   object-fit: contain;
-  background: #0d0f17;
+  background: #0e121a;
 }
 
 .sih-slide-overlay {
   position: absolute;
   inset: auto 0 0 0;
   padding: 45px 22px 52px;
-  background: linear-gradient(0deg, rgba(8, 10, 16, 0.95) 0%, rgba(8, 10, 16, 0.72) 65%, transparent 100%);
+  background: linear-gradient(0deg, rgba(14, 18, 26, 0.95) 0%, rgba(14, 18, 26, 0.70) 65%, transparent 100%);
   color: #fff;
   z-index: 3;
   pointer-events: none;
@@ -1224,9 +1230,9 @@ html[data-theme="light"] .neural-canvas {
 
 .sih-slide-badge {
   display: inline-block;
-  background: rgba(185, 166, 255, 0.22);
-  color: #e0d7ff;
-  border: 1px solid rgba(185, 166, 255, 0.42);
+  background: rgba(37, 87, 214, 0.85);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.1px;
@@ -1245,7 +1251,7 @@ html[data-theme="light"] .neural-canvas {
 .sih-slide-desc {
   font-size: 13px;
   line-height: 1.6;
-  color: #c9d0df;
+  color: #dbe2ef;
   margin: 0;
   max-width: 95%;
 }
@@ -1258,7 +1264,7 @@ html[data-theme="light"] .neural-canvas {
   height: 40px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(15, 18, 28, 0.65);
+  background: rgba(14, 18, 26, 0.75);
   backdrop-filter: blur(8px);
   color: #fff;
   font-size: 24px;
@@ -1272,7 +1278,7 @@ html[data-theme="light"] .neural-canvas {
 }
 
 .sih-nav-btn:hover {
-  background: rgba(185, 166, 255, 0.4);
+  background: var(--accent);
   border-color: var(--accent);
   transform: translateY(-50%) scale(1.08);
 }
@@ -1319,10 +1325,10 @@ html[data-theme="light"] .neural-canvas {
   font-weight: 700;
   letter-spacing: 1px;
   color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   padding: 4px 10px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   backdrop-filter: blur(6px);
 }
 
@@ -1377,7 +1383,7 @@ html[data-theme="light"] .neural-canvas {
 .sih-metric-box strong {
   display: block;
   font: 700 17px "Space Grotesk", sans-serif;
-  color: var(--accent2);
+  color: var(--accent);
 }
 
 .sih-metric-box small {
@@ -1410,7 +1416,7 @@ html[data-theme="light"] .neural-canvas {
   font-size: 11px;
   padding: 5px 10px;
   border-radius: 6px;
-  background: color-mix(in srgb, var(--accent) 8%, var(--surface2));
+  background: var(--surface2);
   border: 1px solid var(--line);
   color: var(--text);
   font-weight: 500;
@@ -1547,13 +1553,18 @@ html[data-theme="light"] .neural-canvas {
   gap: 14px;
   padding: 18px 20px;
   border: 1px solid var(--line);
-  border-radius: 11px;
-  background: var(--bg);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
   min-width: 0;
-  transition: border-color .2s, transform .2s;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
 }
 
-.contact-card[href]:hover { border-color: var(--accent); transform: translateY(-2px); }
+.contact-card[href]:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
 
 .contact-icon {
   display: grid;
@@ -1646,11 +1657,9 @@ html[data-theme="light"] .neural-canvas {
 /* ---------- Responsive: tablet ---------- */
 @media (max-width: 900px) {
   .hero { gap: 15px; }
-  .hero h1 { letter-spacing: -2.5px; }
-  .hero-visual { min-height: 430px; }
-  .portrait-frame { width: 85%; }
-  .card-top { right: -8px; }
-  .card-bottom { left: -8px; }
+  .hero h1 { letter-spacing: -2px; }
+  .hero-visual { min-height: auto; margin-top: 10px; display: flex; justify-content: center; }
+  .portrait-card { width: min(340px, 92%); }
   .about-grid { gap: 30px; }
   .education-step { grid-template-columns: 100px minmax(0, 1fr); }
   .education-achievements { grid-template-columns: 1fr 1fr; }
@@ -1700,18 +1709,9 @@ html[data-theme="light"] .neural-canvas {
     padding-bottom: 75px;
     gap: 12px;
   }
-  .hero-visual { order: 0; min-height: 325px; margin-bottom: 12px; }
-  .portrait-frame { width: 210px; max-width: 66%; aspect-ratio: 4 / 4.8; }
-  .ring-one { width: 300px; }
-  .ring-two { width: 330px; }
-  .card-top { top: 25px; right: 0; }
-  .card-bottom { bottom: 26px; left: 0; }
-  .floating-card { padding: 8px 9px; }
-  .floating-card b { font-size: 9px; }
-  .floating-card small { font-size: 8px; }
-  .card-icon { width: 27px; height: 27px; }
-  .portrait-caption { bottom: 0; font-size: 7px; }
-  .portrait-spark { font-size: 20px; }
+  .hero-visual { order: 0; min-height: auto; margin-bottom: 20px; width: 100%; display: flex; justify-content: center; }
+  .portrait-card { width: min(290px, 90%); padding: 14px; }
+  .portrait-card-media { height: 260px; }
 
   .hero h1 { font-size: clamp(43px, 11.7vw, 62px); letter-spacing: -2.5px; }
   .hero-description { font-size: 16px; }
