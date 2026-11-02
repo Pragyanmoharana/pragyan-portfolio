@@ -40,7 +40,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 if ("IntersectionObserver" in window && !reduceMotion) {
   const revealTargets = document.querySelectorAll(
-    ".section-heading, .about-copy, .focus-panel, .skill-card, .project-card, .experience-card, .event-card, .education-step, .sih-showcase, .education-achievements > *, .contact-card"
+    ".section-heading, .about-copy, .focus-panel, .skill-card, .project-card, .experience-card, .event-card, .education-step, .sih-showcase, .education-achievements > *, .reference-card, .contact-card"
   );
   revealTargets.forEach((el, i) => {
     el.classList.add("js-reveal");
